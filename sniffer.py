@@ -1,3 +1,4 @@
+#packet sniffer for eth ip and tcp/udp header 
 
 #! usr/bin/python
 
