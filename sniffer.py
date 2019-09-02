@@ -31,6 +31,7 @@ def analyze_ip_header(data):
 	ip_header = struct.unpack("!6H4s4s",data[:20]);
 	version   = ip_header[0] >> 12
 	inthdrlen = (ip_header[0] >> 8) & 0x0f
+	tos 	  = ip_header[0] & 0x00ff
 	tolen 	  =  ip_header[1]
 	identfctn = ip_header[2]
 	flags	  = ip_header[3] >> 13
@@ -43,6 +44,7 @@ def analyze_ip_header(data):
 	print  "=================================================IP HEADER DEATILS======================================================="
 	print "VERSION OF IP          :::: " + str(version)
 	print "INTERNET HEADER LENGTH :::: " + str(inthdrlen)
+	print "TYPE OF SERVICE 	      :::: " + str(tos)
 	print "TOTAL LENGTH 	      :::: " + str(tolen)
 	print "IDENTIFICATION NUMBER  :::: " + str(identfctn)
 	print "FLAGS SET 	      :::: " + str(flags)
