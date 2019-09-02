@@ -38,8 +38,8 @@ def analyze_ip_header(data):
 	tol 	  = ip_header[4] >> 8
 	proto	  = ip_header[4] & 0x00ff
 	cheksum   = ip_header[5] 
-	src_adr	  =  binascii.hexlify(ip_header[6])
-	dest_adr  =  binascii.hexlify(ip_header[7])
+	src_adr	  =  socket.inet_ntoa(ip_header[6])
+	dest_adr  =  socket.inet_ntoa(ip_header[7])
 	print  "=================================================IP HEADER DEATILS======================================================="
 	print "VERSION OF IP          :::: " + str(version)
 	print "INTERNET HEADER LENGTH :::: " + str(inthdrlen)
